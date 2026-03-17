@@ -42,7 +42,7 @@ pipeline {
 
         }
 
-        stage('Deploy'){
+        stage('Deploy') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
@@ -51,9 +51,16 @@ pipeline {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
+            steps {
+                script{
+                    echo "Hello, ${PERSON}, nice to meet you."
+                    
+                    echo 'Deploying..'
+                }
+            }
         }
 
-     post {
+      post {
         always {
             echo 'PIPELINE STATUS'
             deleteDir()
@@ -64,7 +71,7 @@ pipeline {
         failure {
             echo 'PIPELINE FAILURE'
         }
-     }
+      }
 
     }
 
