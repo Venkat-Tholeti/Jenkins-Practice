@@ -50,10 +50,10 @@ pipeline {
                 parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
+            }
         }
-    }
 
-    post {
+     post {
         always {
             echo 'PIPELINE STATUS'
             deleteDir()
@@ -64,7 +64,7 @@ pipeline {
         failure {
             echo 'PIPELINE FAILURE'
         }
-    }
+     }
 
     }
 
