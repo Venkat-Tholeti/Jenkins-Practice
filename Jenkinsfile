@@ -59,9 +59,10 @@ pipeline {
                 }
             }
         }
+    }
 
     post {
-        always {
+     always {
             echo 'PIPELINE STATUS'
             deleteDir()
         }
@@ -72,7 +73,4 @@ pipeline {
             echo 'PIPELINE FAILURE'
         }
       }
-
-    }
-
 }
