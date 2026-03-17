@@ -60,7 +60,7 @@ pipeline {
             }
         }
 
-      post {
+    post {
         always {
             echo 'PIPELINE STATUS'
             deleteDir()
