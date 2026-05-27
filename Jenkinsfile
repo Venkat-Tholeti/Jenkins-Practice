@@ -23,7 +23,6 @@ pipeline {
               }
         }
     }
-}
 
 //POST
 
@@ -46,7 +45,7 @@ pipeline {
             echo 'Build state changed!'
         }
     }
-
+}
 
 
 
