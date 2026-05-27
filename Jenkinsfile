@@ -7,19 +7,25 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                echo "Hello NANI FROM JENKINS BUILD STAGE"
+                 script {
+                     echo "Hello NANI FROM JENKINS BUILD STAGE"
+                 }  
             }
         }
 
         stage('TEST') {
             steps {
-                echo "HELLO NANI FROM JENKINS TEST STAGE"
+                script {
+                    echo "HELLO NANI FROM JENKINS TEST STAGE"
+                }               
             }
         }
 
         stage('DEPLOY') {
               steps {
-                echo "HELLO NANI FROM JENKINS DEPLOY STAGE"
+                 script {
+                    echo "HELLO NANI FROM JENKINS DEPLOY STAGE"
+                 }
               }
         }
     }
