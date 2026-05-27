@@ -1,8 +1,13 @@
 pipeline {
+    
     agent {
         label 'Roboshop-Agent'
     }
    
+    environment {
+         COURSE = 'Jenkins'
+    }
+
    //BUILD 
     stages {
         stage('BUILD') {
