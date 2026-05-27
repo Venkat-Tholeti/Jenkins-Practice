@@ -2,7 +2,8 @@ pipeline {
     agent {
         label 'Roboshop-Agent'
     }
-    
+   
+   //BUILD 
     stages {
         stage('BUILD') {
             steps {
@@ -24,6 +25,27 @@ pipeline {
     }
 }
 
+//POST
+
+     post {
+        always {
+            // Always runs, regardless of build status
+            echo 'One way or another, I have finished!'
+            deleteDir() // Clean up workspace
+        }
+        success {
+            // Runs only if the build was successful
+            echo 'Build succeeded!'
+        }
+        failure {
+            // Runs only if the build failed
+            echo 'Build failed! Sending alerts...'
+        }
+        changed {
+            // Runs only if the build state changed from the previous run
+            echo 'Build state changed!'
+        }
+    }
 
 
 
